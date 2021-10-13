@@ -26,22 +26,8 @@ public class LogFileProcessor {
 	 * @param args
 	 */
     public static void main(String args[]){
-        int flag = 0;
-        Scanner s = new Scanner(System.in);
-        System.out.println("Enter a file to parse: ");
-        String file = s.nextLine();
-        boolean valid = false;
-        while(!valid) {
-            System.out.println("Enter a print flag (0,1,2)");
-            flag = s.nextInt();
-            if(flag > 2 | flag < 0) {
-                System.out.println("Invalid Flag");
-            }
-            else {
-                valid = true;
-            }
-        }
-        s.close();
+    	String file = args[0];
+        int flag = Integer.valueOf(args[1]);
         System.out.println("calling runner");
         runner(file, flag);
     }

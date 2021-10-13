@@ -26,16 +26,10 @@ public class ProcessSchedule {
 	public static ArrayList<String> textToOutput = new ArrayList<String>();
 	
 	public static void main(String args[]) {
-		Scanner s = new Scanner(System.in);
-		System.out.print("Enter a file to parse: ");
-		String file = s.nextLine();
-		ExtractText.main(file);
-		System.out.print("Enter where the new text file is: ");
-		String file2 = s.nextLine();
-		s.close();
-		extractCourceInfo(file2);
-		extractStatus(file2);
-		printNumberOfCourses(file2);
+		ExtractText.main("2021FA_Class_Schedule_Daily.pdf");
+        extractCourceInfo("Part2.txt");
+        extractStatus("Part2.txt");
+        printNumberOfCourses("Part2.txt");
 		
 	}
 	/**
