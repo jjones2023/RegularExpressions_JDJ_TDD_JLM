@@ -3,33 +3,33 @@ package two;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.DataInputStream;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/**
- * Uses regex to parse the extracted pdf from ExtractText to find specific info from the text file
- * @author Justin Mattix, David Jones, Taden Duerod
- * @version 1.0
- * Compiler Project 3
- * CS322 - Compiler Construction
- * Fall 2021
- */
+
 public class ProcessSchedule {
+	
+	/**
+	 * Uses regex to parse the extracted pdf from ExtractText to find specific info from the text file
+	 * @author Justin Mattix, David Jones, Taden Duerod
+	 * @version 1.0
+	 * Compiler Project 3
+	 * CS322 - Compiler Construction
+	 * Fall 2021
+	 */
 	
 	public static ArrayList<String> textToOutput = new ArrayList<String>();
 	
 	public static void main(String args[]) {
-		ExtractText.main("2021FA_Class_Schedule_Daily.pdf");
-        extractCourceInfo("Part2.txt");
-        extractStatus("Part2.txt");
-        printNumberOfCourses("Part2.txt");
+		ExtractText.main("bellarmineschedule.pdf");
+		extractCourceInfo("schedule.txt");
+		extractStatus("schedule.txt");
+		printNumberOfCourses("schedule.txt");
 		
 	}
 	/**
@@ -45,7 +45,6 @@ public class ProcessSchedule {
         	BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos1));
         	BufferedReader br = new BufferedReader(new InputStreamReader(in));
 			String line;
-			//Interates through the file and searches for the specific information that the regex specifies
 			while((line = br.readLine()) != null) {
 				Pattern p = Pattern.compile(regex);
 				Matcher m = p.matcher(line);
@@ -79,7 +78,6 @@ public class ProcessSchedule {
         	BufferedWriter bw2 = new BufferedWriter(new OutputStreamWriter(fos2));
         	BufferedReader br2 = new BufferedReader(new InputStreamReader(in));
 			String line;
-			//Interates through the file and searches for the specific information that the regex specifies
 			while((line = br2.readLine()) != null) {
 				Pattern p = Pattern.compile(regex1);
 				Pattern p2 = Pattern.compile(regex2);
@@ -121,7 +119,6 @@ public class ProcessSchedule {
         	BufferedWriter bw3 = new BufferedWriter(new OutputStreamWriter(fos3));
         	BufferedReader br3 = new BufferedReader(new InputStreamReader(in));
 			String line;
-			//Interates through the file and searches for the specific information that the regex specifies
 			while((line = br3.readLine()) != null) {
 				Pattern p = Pattern.compile(regex);
 				Matcher m = p.matcher(line);
